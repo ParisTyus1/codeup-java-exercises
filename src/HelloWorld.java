@@ -80,7 +80,12 @@ Create an int variable named myFavoriteNumber and assign your favorite number to
         /* Complete Try to create a variable named class. What happens? Words reserved by the Java language may not be used as an identifier are called reserved words*/
 
 
+        byte num = 127;
+        System.out.println(++num);
 
+        int num2 = Integer.MAX_VALUE;
+        System.out.println(num2++);
+        System.out.println(num2);
 
 
 
@@ -113,6 +118,10 @@ Create an int variable named myFavoriteNumber and assign your favorite number to
         System.out.println(num2);
     }
 
+
+
+        }
+    }
 
 
 }
