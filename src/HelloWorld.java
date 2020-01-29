@@ -83,12 +83,6 @@ Create an int variable named myFavoriteNumber and assign your favorite number to
         byte num = 127;
         System.out.println(++num);
 
-        int num2 = Integer.MAX_VALUE;
-        System.out.println(num2++);
-        System.out.println(num2);
-
-
-
 
         /*Object is the most generic type in Java. You can assign any value to a variable of type Object. What do you think will happen when the following code is run?*/
 
@@ -121,8 +115,8 @@ Create an int variable named myFavoriteNumber and assign your favorite number to
 
 
         }
-    }
 
 
-}
+
+
 
