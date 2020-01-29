@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class ControlFlowExercises {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
 //        int i = 100;
 //        while (i <= 15) {
 //            System.out.println("i is " + i);
@@ -26,11 +27,11 @@ public class ControlFlowExercises {
 //                    System.out.println(i);
 //                    i*=2;
 //                }
-//            }while(i <= 100000000);
+//            }while(i < 100000000);
 //    }
-//        for(long i = 2; i <= 1000000; i *= i) {
+//        for(int i = 2; i <= 1000000; i*=2){
 //            System.out.println(i);
-//            i += 2;
+//                i++;
 //        }
 //
 //        int n = 100;
@@ -84,35 +85,36 @@ public class ControlFlowExercises {
 //                System.out.println();
 //            }
 //        }
-        int numberGrade;
-        String userInput;
-
-        do {
-            System.out.println("\nEnter an Integer: ");
-            numberGrade = scanner.nextInt();
-            if (numberGrade <= 59)
-                System.out.print(" You're grade is an F");
-
-            else if (numberGrade <= 60)
-                System.out.print("You're grade is a D");
-
-            else if (numberGrade <= 79)
-                System.out.print("you're grade is a C");
-
-            else if (numberGrade <= 87)
-                System.out.print("you're grade is a B");
-
-            else if (numberGrade >= 88)
-                System.out.print("You're grade is a A");
-
-            else
-                System.out.print("Error, please enter a number between 0 and 100");
-
-        System.out.println("\nwould you like to continue?");
-        userInput = scanner.next();
-    }while (userInput.equals("yes"));
-
-
-    }
+//        int numberGrade;
+//        String userInput;
+//
+//        do {
+//            System.out.println("\nEnter a grade between 0 and 100: ");
+//            numberGrade = scanner.nextInt();
+//            if (numberGrade <= 59)
+//                System.out.print(" You're grade is an F");
+//
+//            else if (numberGrade <= 60)
+//                System.out.print("You're grade is a D");
+//
+//            else if (numberGrade <= 79)
+//                System.out.print("you're grade is a C");
+//
+//            else if (numberGrade <= 87)
+//                System.out.print("you're grade is a B");
+//
+//            else if (numberGrade >= 88)
+//                System.out.print("You're grade is a A");
+//
+//            else
+//                System.out.print("Error, please enter a number between 0 and 100");
+//
+//        System.out.println("\nwould you like to continue?");
+//        userInput = scanner.next();
+//    }while (userInput.equals("yes"));
+//
+//
+//    }
+}
 }
 
