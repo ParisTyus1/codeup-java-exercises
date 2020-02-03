@@ -56,7 +56,7 @@ public class Input {
 
     public int getInt() {
         int answer;
-        System.out.println("Enter an integer: ");
+//        System.out.println("Enter an integer: ");
         answer = this.scanner.nextInt();
         return answer;
     }
