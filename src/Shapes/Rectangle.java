@@ -9,11 +9,7 @@ public class Rectangle {
         this.length = length;
     }
 
-    public int getArea() {//method being applied to the constructor//
-        return width * length ;
-    }
+    public int getArea() {return this.width * this.length ; }//method being applied to the constructor//
 
-    public int getPerimeter() {//method being applied to the constructor//
-        return 2*width + 2*length;
-    }
+    public int getPerimeter() {return 2 * this.width + 2 * this.length; }//method being applied to the constructor//
 }
