@@ -21,9 +21,19 @@ public class AdventureGame {
 
             pimpWars.playerSetUp();
             pimpWars.theStroll();
+            pimpWars.west();
+            pimpWars.ending();
+            pimpWars.winAsst();
+            pimpWars.lady();
+            pimpWars.east();
+            pimpWars.winBoss();
         
 
         }
+
+
+
+
 
         public void playerSetUp(){
 
@@ -32,6 +42,7 @@ public class AdventureGame {
             pimpHP = 15;
 
             playerWeapon = "Razor Blade";
+            playerWeapon = "Pimp sword";
             System.out.println("Welcome to Pimp Wars Enter Start to proceed");
             enterScanner.next();
             System.out.println("Your HP: "+ playerHP);
@@ -65,7 +76,7 @@ public class AdventureGame {
             if(choice==1){
                 System.out.println("Time to find the pimp and your lady!.");
                 enterScanner.nextLine();
-                east();
+                west();
 
                 }else{
                 System.out.println("You found Sugar Foot and cinnamon!");
@@ -89,18 +100,17 @@ public class AdventureGame {
 
         public void crossRoad(){
             System.out.println("\n------------------------------------------------------------------\n");
-            System.out.println(" Im gonna see you later Playa Hata");
             System.out.println("1: power up for the pimp battle ");
             System.out.println("2: find your missing lady");
             System.out.println("3: Go back to the Stroll");
-            System.out.println("4: Go west");
+            System.out.println("4: Go east");
             System.out.println("5: fight");
             System.out.println("\n------------------------------------------------------------------\n");
 
             choice = myScanner.nextInt();
 
             if(choice==1){
-                east();
+                west();
             }
             else if(choice==2){
                 lady();
@@ -124,13 +134,13 @@ public class AdventureGame {
             System.out.println("You gave her the legendary baby powder pimp slap!Your HP is recovered.");
             playerHP = playerHP + 1;
             System.out.println("Your HP: " + playerHP);
-            System.out.println("\n\n1: Go back to the stroll");
+            System.out.println("\n\n1: Now go fight Sugar Foot");
             System.out.println("\n------------------------------------------------------------------\n");
 
             choice = myScanner.nextInt();
 
             if(choice==1){
-                crossRoad();
+                fight();
             }
             else{
                 theStroll();
@@ -139,10 +149,10 @@ public class AdventureGame {
 
         public void east(){
             System.out.println("\n------------------------------------------------------------------\n");
-            System.out.println("You walked into a forest and found a Super Blade!");
+            System.out.println("You checking your ladies on the stroll and found a Super Blade!");
             playerWeapon = "Super Razor blade";
-            System.out.println("Your Weapon: "+ playerWeapon);
-            System.out.println("\n\n1: Go back to the crossroad");
+            System.out.println("Your Weapon has been upgraded to: "+ playerWeapon);
+            System.out.println("\n\n1: continue finding your lady and Sugar Foot");
             System.out.println("\n------------------------------------------------------------------\n");
 
             choice = myScanner.nextInt();
@@ -159,19 +169,20 @@ public class AdventureGame {
             System.out.println("\n------------------------------------------------------------------\n");
             System.out.println("You encounter an assistant pimp name shorty do wop!\n");
             System.out.println("1: Fight");
+            System.out.println("Your Weapon has been upgraded to: "+ playerWeapon);
+            System.out.println("Your HP: " + playerHP);
             System.out.println("2: Run");
             System.out.println("\n------------------------------------------------------------------\n");
 
             choice = myScanner.nextInt();
 
             if(choice==1){
-                playerHP = playerHP + 1;
-                fight();
+                playerHP = playerHP +1;
+                winAsst();
             }
             else if(choice==2){
                 crossRoad();
-            }
-            else{
+            }else{
                 east();
             }
         }
@@ -198,14 +209,13 @@ public class AdventureGame {
             }
         }
 
-        public void attack(){
-            int playerDamage =0;
+        public void attack() {
+            int playerDamage = 0;
 
 
-            if(playerWeapon.equals("blade")){
+            if (playerWeapon.equals("Super blade")) {
                 playerDamage = new java.util.Random().nextInt(6);
-            }
-            else if(playerWeapon.equals("Super Blade")){
+            } else if (playerWeapon.equals("Pimp Sword")) {
                 playerDamage = new java.util.Random().nextInt(8);
             }
 
@@ -215,59 +225,107 @@ public class AdventureGame {
 
             System.out.println("Monster HP: " + pimpHP);
 
-            if(pimpHP<1){ win(); } else if(pimpHP>0){
-                int pimpDamage =0;
+            if (pimpHP < 1) {
+                winAsst();
+            } else if (pimpHP > 0) {
+                int pimpDamage = 0;
 
-                pimpDamage = new java.util.Random().nextInt(4);
 
-                System.out.println("The monster attacked you and gave " + pimpDamage + " damage!");
+                pimpDamage = new java.util.Random().nextInt(3);
+
+                System.out.println("The pimp attacked you and gave " + pimpDamage + " damage!");
 
                 playerHP = playerHP - pimpDamage;
 
                 System.out.println("Player HP: " + playerHP);
 
-                if(playerHP<1){ dead(); } else if(playerHP>0){
+                if (playerHP < 1) {
+                    dead();
+                } else if (playerHP > 0) {
                     fight();
+                }
+
+                if (pimpHP < 1) {
+                    winBoss();
+                } else if (pimpHP > 0) {
+                }else {
+                    fight();
+                }
+
+
+                pimpDamage = new java.util.Random().nextInt(3);
+
+                System.out.println("The pimp attacked you and gave " + pimpDamage + " damage!");
+
+                playerHP = playerHP - pimpDamage;
+
+                System.out.println("Player HP: " + playerHP);
+
+                if (playerHP < 1) {
+                    dead();
+                } else if (playerHP > 0) {
+                    fight();
+                }
+
+            }
+        }
+
+
+
+
+            public void dead () {
+                System.out.println("\n------------------------------------------------------------------\n");
+                System.out.println("You are dead!!!");
+                System.out.println("\n\nGAME OVER");
+                System.out.println("\n------------------------------------------------------------------\n");
+
+            }
+
+            public void winBoss () {
+                System.out.println("\n------------------------------------------------------------------\n");
+                System.out.println(playerName + ": Im gonna see you later Playa Hata");
+                System.out.println("You beat Sugar foot!");
+                System.out.println("1: Go east");
+                System.out.println("\n------------------------------------------------------------------\n");
+
+                razor = 1;
+
+                choice = myScanner.nextInt();
+                if (choice == 1) {
+                    ending();
+                } else {
+                    winBoss();
                 }
             }
 
+            public void winAsst () {
+                System.out.println("\n------------------------------------------------------------------\n");
+                System.out.println("You beat shorty do wop !");
+                System.out.println("Your HP: "+ playerHP);
+                System.out.println("Shorty do wop dropped a knife!");
+                System.out.println("You obtained a super blade!\n\n");
+                System.out.println("1: Go to crossroad");
+                System.out.println("\n------------------------------------------------------------------\n");
 
-        }
+                razor = 1;
 
-        public void dead(){
-            System.out.println("\n------------------------------------------------------------------\n");
-            System.out.println("You are dead!!!");
-            System.out.println("\n\nGAME OVER");
-            System.out.println("\n------------------------------------------------------------------\n");
+                choice = myScanner.nextInt();
+                if (choice == 1) {
+                    crossRoad();
+                } else {
+                    winAsst();
 
-        }
-
-        public void win(){
-            System.out.println("\n------------------------------------------------------------------\n");
-            System.out.println("You beat Sugar foot!");
-            System.out.println("Sugar Foot dropped a knife!");
-            System.out.println("You obtained a super blade!\n\n");
-            System.out.println("1: Go east");
-            System.out.println("\n------------------------------------------------------------------\n");
-
-            razor = 1;
-
-            choice = myScanner.nextInt();
-            if(choice==1){
-                crossRoad();
-            }
-            else{
-                win();
+                }
             }
 
-        }
+                public void ending () {
+                        System.out.println("\n------------------------------------------------------------------\n");
+                        System.out.println("Sugar Foot: Oh you killed my assistant pimp!?? Great!");
+                        System.out.println("Sugar Foot: You the Coldest pimp in the land. If any of your ladies try to leave I will slap them and send them back!");
+                        System.out.println("\n\n           THE END                    ");
+                        System.out.println("\n------------------------------------------------------------------\n");
+                    }
+                }
 
-        public void ending(){
-            System.out.println("\n------------------------------------------------------------------\n");
-            System.out.println("Sugar Foot: Oh you killed my assistant pimp!?? Great!");
-            System.out.println("Sugar Foot: You the Coldest pimp in the land. If any of your ladies try to leave I will slap them and send them back!");
-            System.out.println("\n\n           THE END                    ");
-            System.out.println("\n------------------------------------------------------------------\n");
-        }
-    }
+
 
