@@ -42,7 +42,7 @@ public class MoviesApplication {
                 for (Movie movie : movieList) {
                     switch (choice) {
                         case 1:
-                            System.out.printf("%s -- %S\n", movie.getName(), movie.getCategory());
+                            System.out.printf("%s -- %S\n", movie.getName(), movie.getCategory());//filter is in the fall through//
                             break;
                         case 2:
                         case 3:
@@ -67,7 +67,7 @@ public class MoviesApplication {
         } while (choice != 0);
         System.out.println("Goodbye");
     }
-
+//adding new movie//
     private static Movie[] addMovie(Movie[] movieList, Scanner scanner) {
 
         System.out.print("Enter the movie's name: ");
