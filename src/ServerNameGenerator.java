@@ -22,8 +22,7 @@ public static void main (String[]args){
 public String returnElement(String[] Adjectives, String[] Noun){
     int randomAdj = new Random().nextInt(Adjectives.length);//method to randomize adj//
     int randomNoun = new Random().nextInt(Noun.length);//method to randomize noun//
-    for(int i = 0; i < 0;i++);
-    System.out.println(Adjectives[randomAdj] + " - "+ Noun[randomNoun]);
+    return (Adjectives[randomAdj] + " - "+ Noun[randomNoun]);
 }
 }
 

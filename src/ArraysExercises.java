@@ -20,7 +20,7 @@ public class ArraysExercises {
             System.out.println(person);
         }
 
-        System.out.println("2nd print");
+        System.out.println("----------");
 
         aPerson = new Person("Carol");//looping through the array and adding the new person//
         Person[] people = addPerson(persons, aPerson);

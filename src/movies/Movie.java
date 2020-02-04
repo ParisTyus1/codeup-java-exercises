@@ -9,19 +9,21 @@ public class Movie {
         this.category = category;
     }
 
-    public String getMovie() {
-        return this.name + "--" + this.category;
+    public String getName() {
+        return name;
     }
 
-    public void setMovie(String name, String category) {
+    public void setName(String name) {
         this.name = name;
-        this.category = category;
+
+    }
+    public String getCategory(){
+        return category;
     }
 
-    @Override
-    public String toString() {
-        return this.name + "-" + this.category;
-    }
+   public void setCategory(String category){
+        this.category = category;
+   }
 
 
 }
