@@ -2,7 +2,7 @@ package Shapes;
 
 public class Square extends Quadrilateral {
 
-    public Square(int side) {
+    public Square(double side) {
         super(side, side);//what do you want it to do instead of what the parent is set for//
 
     }
@@ -17,12 +17,16 @@ public class Square extends Quadrilateral {
 
     @Override
     double setlength(double length) {
-        return 0;
+        this.length = length;
+        this.width = length;
+        return length;
     }
 
     @Override
     double setWidth(double width) {
-        return 0;
+        this.width = width;
+        this.length = width;
+        return width;
     }
 
 //    public int getPerimeter(int side) {
