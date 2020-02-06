@@ -1,12 +1,14 @@
 package grades;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class student {
     private String name;
     private ArrayList<Integer> grades;
+//    HashMap<String, String> attendance = new HashMap<>();
 
-    public student(String name) {
+    public student(String name) {//constructor//
 
         this.name = name;
         this.grades = new ArrayList<>();
@@ -22,6 +24,8 @@ public class student {
         grades.add(grade);
     }
 
+
+
     // returns the average of the students grades
     public double getGradeAverage() {//create loop to traverse through all students and get averages//
         double total = 0;
@@ -30,6 +34,16 @@ public class student {
         }
         return total/grades.size();
     }
+    public String getName(){
+        return this.name;
+    }
+
+
+
+
+//    public String getStudentNames(){
+//        for (String name: names)
+//    }
 
     public static void main(String[] args) {
       student student = new student("Paris");//object instances of each student//with addGrade and student avg//
