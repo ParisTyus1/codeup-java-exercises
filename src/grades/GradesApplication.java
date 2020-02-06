@@ -9,33 +9,32 @@ public class GradesApplication {
 Scanner scanner = new Scanner(System.in);
 
 
-
-    student student = new student("Paris");//object instances of each student//with addGrade and student avg//
+    Student student = new Student("Paris");//object instances of each student//with addGrade and student avg//
         student.addGrade(90);
         student.addGrade(100);
         student.addGrade(67);
 //        System.out.println(student.getGradeAverage());
 
-    student student2 = new student("Cash");
+    Student student2 = new Student("Cash");
         student2.addGrade(45);
         student2.addGrade(100);
         student2.addGrade(98);
 //        System.out.println(student.getGradeAverage());
 
-    student student3 = new student("Grace");
+    Student student3 = new Student("Grace");
         student3.addGrade(87);
         student3.addGrade(77);
         student3.addGrade(110);
 //        System.out.println(student.getGradeAverage());
 
-    student student4 = new student("Faith");
+    Student student4 = new Student("Faith");
         student4.addGrade(77);
         student4.addGrade(89);
         student4.addGrade(120);
 //        System.out.println(student.getGradeAverage());
 
 
-    HashMap<String, student> students = new HashMap<>();
+    HashMap<String, Student> students = new HashMap<>();
 
         students.put("Ptyus1980", student);
         students.put("CashMoney9900", student2);
@@ -48,11 +47,11 @@ Scanner scanner = new Scanner(System.in);
         students.forEach((key, value) -> System.out.println((key)));
 
         String userInput = "";
-        int userContinue = 1;
+        int userContinue = 1;//true or false statement//
         //function of this do while is the mke sure user exist.//
 
 
-        do {
+do {
 
 
     do {
@@ -72,11 +71,10 @@ Scanner scanner = new Scanner(System.in);
     System.out.println("Do you want to Continue? 1:Yes or 2:no");
     userContinue = scanner.nextInt();
 
-    userInput = "";
+    userInput = "";//reset value to empty//
 }while (userContinue == 1);
 
 
 }
-
 
 }

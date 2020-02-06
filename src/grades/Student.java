@@ -1,14 +1,13 @@
 package grades;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
-public class student {
+public class Student {
     private String name;
     private ArrayList<Integer> grades;
 //    HashMap<String, String> attendance = new HashMap<>();
 
-    public student(String name) {//constructor//
+    public Student(String name) {//constructor//
 
         this.name = name;
         this.grades = new ArrayList<>();
@@ -41,30 +40,27 @@ public class student {
 
 
 
-//    public String getStudentNames(){
-//        for (String name: names)
-//    }
 
     public static void main(String[] args) {
-      student student = new student("Paris");//object instances of each student//with addGrade and student avg//
+      Student student = new Student("Paris");//object instances of each student//with addGrade and student avg//
         student.addGrade(90);
         student.addGrade(100);
         student.addGrade(67);
         System.out.println(student.getGradeAverage());
 
-        student student2 = new student("Cash");
+        Student student2 = new Student("Cash");
         student.addGrade(45);
         student.addGrade(100);
         student.addGrade(98);
         System.out.println(student.getGradeAverage());
 
-        student student3 = new student("Grace");
+        Student student3 = new Student("Grace");
         student.addGrade(87);
         student.addGrade(77);
         student.addGrade(110);
         System.out.println(student.getGradeAverage());
 
-        student student4 = new student("Faith");
+        Student student4 = new Student("Faith");
         student.addGrade(77);
         student.addGrade(89);
         student.addGrade(120);
