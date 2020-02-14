@@ -1,4 +1,5 @@
 package util;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Input {
@@ -35,9 +36,9 @@ public class Input {
         answer = this.scanner.next();
         return answer.toLowerCase().startsWith("y");
     }
-
     public int getInt(int min, int max) {
-        int answer;
+        int answer = 0;
+
         do {
             System.out.println("Enter an integer betweeen " + min + " and " + max +": ");
             answer = this.scanner.nextInt();
@@ -54,11 +55,27 @@ public class Input {
         return answer;
     }
 
+
     public int getInt() {
-        int answer;
-//        System.out.println("Enter an integer: ");
-        answer = this.scanner.nextInt();
+        int answer = 0;
+        boolean error = true;
+
+
+        do {
+            try {
+                System.out.println("please enter an integer: ");
+                answer = Integer.valueOf(this.scanner.next());
+//.valueOF => built in method use to return an integer instance representing the value//
+//set answer variable  = valueOf with the parameter being the scanner.next property//
+                error = false;
+                System.out.println("Integer entered is:  " + answer);
+
+            } catch (NumberFormatException nfe) {
+                System.out.println("That's not an integer, please try again");
+            }
+        }while(error);
         return answer;
+
     }
 
     public int getInt(String prompt) {
@@ -87,7 +104,21 @@ public class Input {
     }
 
     public double getDouble() {
-        return getDouble("Enter a double: ");
+        double userInput = 0;
+        boolean error = true;
+
+        do {
+            try {
+                System.out.println("please enter an Double: ");
+                userInput = Double.valueOf(this.scanner.next());//listening for the double of \ passing it as userInput//
+                error = false;
+                System.out.println("Integer entered is:  "+userInput);
+
+            } catch (NumberFormatException nfe) {
+                System.out.println("That's not an double, please try again");
+            }
+        }while(error);
+        return userInput;
     }
 
     public double getDouble(String prompt) {
