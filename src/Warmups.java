@@ -39,29 +39,36 @@
 //            int sum = binary1 + binary2;
 //            return Integer.toBinaryString(sum);
 //    }
-        public static void main(String[] args) {
-           uberProblem(new ArrayList<>());
-            ArrayList<Integer> returnArr = new ArrayList<Integer>();
-            returnArr.add(3);
-            returnArr.add(4);
-            returnArr.add(5);
 
-            for (int i = 0; i< returnArr.size();i++){
-                System.out.println(returnArr.get(i) * (i));
-            }
-        }
 
-        public static ArrayList<Integer> uberProblem(ArrayList<Integer> inputArr) {
+        public static ArrayList<Integer> uberProblem(int[] inputArr) {
             int multiSum = 1;
-            for (int i = 0; i < inputArr.size(); i++) {
-                multiSum *= inputArr.get(i);
+            for (Integer value : inputArr) {
+                multiSum *= value;
             }
             System.out.println(multiSum);
             ArrayList<Integer> returnArr = new ArrayList<>();
-            for (int j = 0; j < inputArr.size(); j++) {
-                int placeholder = multiSum / inputArr.get(j);
+            for (Integer integer : inputArr) {
+                int placeholder = multiSum / integer;
                 returnArr.add(placeholder);
             }
             return returnArr;
         }
-    }
+
+        public static void main(String[] args) {
+            uberProblem(new int[]{1,2,3,4,5,6});
+            uberProblem(new int[]{4,5,6});
+            uberProblem(new int[]{7,8,9});
+
+
+
+
+//
+
+
+
+
+
+
+            }
+        }
