@@ -2,7 +2,7 @@ package Shapes;
 
 public class ShapesTest {
         public static void main(String[] args){
-            Measureable myShape;
+            Measurable myShape;
             myShape= new Square(6.5);
             System.out.println(myShape.getPerimeter());
             System.out.println(myShape.getArea());

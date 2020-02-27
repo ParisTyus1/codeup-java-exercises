@@ -1,7 +1,7 @@
 package Shapes;
 
 
-public class Rectangle extends Quadrilateral implements Measureable {
+public class Rectangle extends Quadrilateral implements Measurable {
 
 
     public Rectangle(double width, double length) {//constructor that matches super//
