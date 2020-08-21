@@ -8,3 +8,7 @@
 # Compiled output
 *.class
 out/*
+
+#folder and files
+./F1payments
+../f1payments
