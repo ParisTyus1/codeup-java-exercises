@@ -10,5 +10,4 @@
 out/*
 
 #folder and files
-./F1payments
-../f1payments
+.f1payments/*

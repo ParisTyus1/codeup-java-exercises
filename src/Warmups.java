@@ -40,35 +40,31 @@
 //            return Integer.toBinaryString(sum);
 //    }
 
-
-        public static ArrayList<Integer> uberProblem(int[] inputArr) {
-            int multiSum = 1;
-            for (Integer value : inputArr) {
-                multiSum *= value;
-            }
-            System.out.println(multiSum);
-            ArrayList<Integer> returnArr = new ArrayList<>();
-            for (Integer integer : inputArr) {
-                int placeholder = multiSum / integer;
-                returnArr.add(placeholder);
-            }
-            return returnArr;
-        }
-
-        public static void main(String[] args) {
-            uberProblem(new int[]{1,2,3,4,5,6});
-            uberProblem(new int[]{4,5,6});
-            uberProblem(new int[]{7,8,9});
-
-
-
-
 //
+//        public static ArrayList<Integer> uberProblem(int[] inputArr) {
+//            int multiSum = 1;
+//            for (Integer value : inputArr) {
+//                multiSum *= value;
+//            }
+//            System.out.println(multiSum);
+//            ArrayList<Integer> returnArr = new ArrayList<>();
+//            for (Integer integer : inputArr) {
+//                int placeholder = multiSum / integer;
+//                returnArr.add(placeholder);
+//            }
+//            return returnArr;
+//        }
+//
+//        public static void main(String[] args) {
+//            uberProblem(new int[]{1,2,3,4,5,6});
+//            uberProblem(new int[]{4,5,6});
+//            uberProblem(new int[]{7,8,9});
+//
+//            }
 
 
 
 
+    }
 
 
-            }
-        }
